@@ -1,0 +1,21 @@
+<h3>Desde mi Componen List</h3>
+
+
+
+<div *ngIf="deleteHeroe; else borrarHeroes">
+  <h3>Heroe borrado : <small class="text-danger">{{ deleteHeroe }}</small> </h3>
+</div>
+<ng-template  #borrarHeroes>
+  <h3 *ngIf="!deleteHeroe">Se ha borrado todos los herores</h3>
+</ng-template>
+
+
+
+<button (click) = "renovarList()"  class="btn btn-outline-danger">
+  Borrar Utlimo Heroe
+</button>
+
+<ul class="mt-2 list-group">
+  <li *ngFor="let name of heroNames" class = "list-group-item">{{ name }}</li>
+
+</ul>
